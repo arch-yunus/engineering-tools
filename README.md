@@ -11,17 +11,18 @@ Bu depo, farklı mühendislik disiplinlerinde kullanılan temel yazılımlar, ma
 ## 📌 İçindekiler
 1. [Hakkında](#-hakkında)
 2. [Hızlı Başlangıç (Launcher Arayüzü)](#-hızlı-başlangıç-launcher-arayüzü)
-3. [Mühendislik Branşları ve Araçları](#-mühendislik-branşları-ve-araçları)
+3. [Teknoloji, Program ve Dil Kataloğu](#-teknoloji-program-ve-dil-kataloğu)
+4. [Mühendislik Branşları ve Araçları](#-mühendislik-branşları-ve-araçları)
     - [Yazılım ve Veri Analizi](#1-yazılım-ve-veri-analizi)
     - [Elektrik-Elektronik ve Otomasyon](#2-elektrik-elektronik-ve-otomasyon)
     - [Makine ve İnşaat Mühendisliği](#3-makine-ve-inşaat-mühendisliği)
     - [Endüstri Mühendisliği](#4-endüstri-mühendisliği)
     - [Kalite Yönetimi ve Gıda Güvenliği](#5-kalite-yönetimi-ve-gıda-güvenliği)
     - [Çevre ve Sürdürülebilirlik](#6-çevre-ve-sürdürülebilirlik)
-4. [Proje Klasör Yapısı](#-proje-klasör-yapısı)
-5. [Kurulum ve Çalıştırma](#-kurulum-ve-çalıştırma)
-6. [Katkıda Bulunma (Contributing)](#-katkıda-bulunma)
-7. [Lisans](#-lisans)
+5. [Proje Klasör Yapısı](#-proje-klasör-yapısı)
+6. [Kurulum ve Çalıştırma](#-kurulum-ve-çalıştırma)
+7. [Katkıda Bulunma (Contributing)](#-katkıda-bulunma)
+8. [Lisans](#-lisans)
 
 ---
 
@@ -54,6 +55,72 @@ Bu komut size aşağıdaki gibi interaktif bir konsol arayüzü sunacaktır:
 ```
 
 ---
+
+## 📊 Teknoloji, Program ve Dil Kataloğu
+
+Aşağıdaki tablolarda, görsel envanterimizde yer alan tüm dil, program ve uluslararası kalite standartları kategorilerine göre detaylı şekilde incelenmiştir.
+
+### 💻 Yazılım ve Bilgisayar
+
+| Araç / Dil | Okunuşu | Görseldeki Tanımı | Detaylı İnceleme ve Mühendislikteki Rolü |
+| :--- | :--- | :--- | :--- |
+| **Python** | Paytın | Yapay zeka, veri analizi, otomasyon ve yazılım geliştirme. | Yüksek seviyeli, genel amaçlı programlama dili. Yapay zeka (TensorFlow, PyTorch), veri analitiği (Pandas, NumPy) ve sistem otomasyonlarında sektör standardıdır. |
+| **Java** | Cava | Büyük ölçekli uygulamalar ve Android uygulamaları geliştirme. | Sınıf tabanlı, nesne yönelimli dil. Özellikle büyük kurumsal arka ofis yazılımlarında, dağıtık sistemlerde ve Android mobil uygulama altyapısında kullanılır. |
+| **C#** | Si Şarp | Masaüstü programlar, web uygulamaları ve oyun geliştirme. | Microsoft tarafından geliştirilen nesne yönelimli dil. Windows masaüstü araçlarında (WPF, WinForms), kurumsal web platformlarında (ASP.NET) ve Unity ile oyun geliştirmede temeldir. |
+| **JavaScript** | Cava Script | Web sitelerinin etkileşimli olmasını sağlar. | Dinamik web tarayıcısı betik dili. Web tabanlı mühendislik panelleri, gösterge tabloları (dashboard), gerçek zamanlı grafik izleme arayüzleri ve IoT görselleştirmelerinde vazgeçilmezdir. |
+| **SQL** | Es Kyu El | Veri tabanındaki bilgileri saklamak, düzenlemek ve sorgulamak. | İlişkisel veritabanı yönetim dili. Üretim geçmişi, ürün katalogları, deney test sonuçları ve ERP verilerinin yapılandırılmış şekilde depolanması ve hızlıca çekilmesinde kullanılır. |
+| **Git** | Git | Yazılım projelerindeki değişiklikleri takip etmeyi sağlar. | Dağıtık versiyon kontrol sistemi. Kod tabanındaki değişikliklerin geçmişini tutar, farklı mühendislerin aynı kod üzerinde çakışmadan çalışmasını ve geriye dönük hata takibini sağlar. |
+| **GitHub** | GitHab | Projeleri internet üzerinde saklar ve ekip halinde çalışmayı kolaylaştırır. | Git tabanlı bulut depolama ve iş birliği platformu. Projelerin sürüm takibini, takım içi kod incelemelerini (Pull Request) ve CI/CD (Sürekli Entegrasyon/Dağıtım) süreçlerini yönetir. |
+| **AWS** | Ey Dablyu Es | Uygulamaların ve verilerin bulut sunucularda çalışmasını sağlar. | Amazon Web Services. Sanal sunucular, veri depolama alanları, IoT veri analitiği motorları ve veritabanı servisleri sunarak büyük mühendislik uygulamalarını buluta taşır. |
+| **Azure** | Ajur | Bulut hizmetleri sunar, büyük şirketler tarafından kullanılır. | Microsoft bulut platformu. Windows sunucuları, Active Directory entegrasyonu, yapay zeka analiz araçları ve hibrit bulut mimarileri ile kurumsal üretim tesislerinde veri merkezi rolü oynar. |
+
+### ⚡ Elektrik-Elektronik ve Mekatronik
+
+| Araç / Standart | Okunuşu | Görseldeki Tanımı | Detaylı İnceleme ve Mühendislikteki Rolü |
+| :--- | :--- | :--- | :--- |
+| **PLC** | Pi El Si | Fabrikalardaki makineleri ve üretim hatlarını kontrol eder. | Programlanabilir Mantıksal Denetleyici. Endüstriyel ortamlar için tasarlanmış, gerçek zamanlı çalışan mikroişlemci tabanlı donanım. Motorlar, valfler, sensörler ve aktüatörleri milisaniyeler içinde kontrol eder. |
+| **SCADA** | Skada | Fabrikadaki tüm sistemlerin tek ekrandan izlenmesini ve yönetilmesini sağlar. | Denetimsel Kontrol ve Veri Toplama Sistemi. Fabrika sahasındaki PLC'lerden veri toplayıp operatörlere grafiksel ekranlar üzerinden tesis sıcaklıklarını, basınçlarını, motor durumlarını izleten ve müdahale ettiren yazılım katmanı. |
+| **EPLAN** | İ Plan | Elektrik projelerinin ve devre şemalarının çizilmesini sağlar. | Elektriksel CAD programı. Fabrika panoları, kablolar, klemensler, röleler ve otomatik kumanda şemalarının uluslararası (IEC/ANSI) standartlara uygun çizilmesini ve parça listelerinin (BOM) üretilmesini sağlar. |
+
+### 🏗️ Makine ve İnşaat
+
+| Araç / Süreç | Okunuşu | Görseldeki Tanımı | Detaylı İnceleme ve Mühendislikteki Rolü |
+| :--- | :--- | :--- | :--- |
+| **AutoCAD** | Oto Ked | Teknik çizim ve proje hazırlamak için kullanılır. | 2 boyutlu ve temel 3 boyutlu bilgisayar destekli tasarım (CAD) yazılımı. Mimari kat planları, inşaat detay çizimleri ve mekanik parça kesitleri için evrensel vektörel standarttır. |
+| **SolidWorks** | Solid Vörks | 3 boyutlu makine parçaları ve ürünler tasarlar. | Parametrik 3D katı modelleme yazılımı. Makine parçaları, dişliler, sac metal tasarımları, mekanik montaj simülasyonları yapar ve imalat için teknik resimleri otomatik oluşturur. |
+| **CATIA** | Katia | Otomobil, uçak ve karmaşık ürünlerin tasarımında kullanılır. | Üst seviye CAD/CAM/CAE yazılımı. Havacılık, savunma ve otomotiv sektörlerinde kompleks kavisli yüzey tasarımları (surfacing), yapısal analizler ve geniş montaj hiyerarşileri için kullanılır. |
+| **CNC** | Si En Si | Bilgisayar kontrollü üretim makinelerini çalıştırmayı sağlar. | Bilgisayarlı Sayısal Kontrol. Torna, freze, lazer kesim ve punch makinelerinin insan gücü yerine G-kodu direktifleriyle hareket ettirilerek mikron hassasiyetinde parça işlemesini sağlayan üretim altyapısı. |
+| **Primavera** | Primavera | Büyük projelerin zaman planını ve iş programını oluşturur. | Oracle Primavera P6. Havalimanı, baraj, otoyol gibi büyük ölçekli ve çok paydaşlı inşaat projelerinde kritik yol analizi (CPM), kaynak optimizasyonu, maliyet bütçeleme ve ilerleme takibi yapar. |
+| **MS Project** | Em Es Projekt | Projelerin hangi tarihte başlayıp biteceğini planlar. | Microsoft Project. Gantt şemaları, iş kırılım yapıları (WBS) ve kaynak atamaları oluşturarak proje yöneticilerinin teslim tarihlerini, gecikmeleri ve görev bağımlılıklarını izlemesini sağlar. |
+
+### 📊 Endüstri Mühendisliği
+
+| Metot / Araç | Okunuşu | Görseldeki Tanımı | Detaylı İnceleme ve Mühendislikteki Rolü |
+| :--- | :--- | :--- | :--- |
+| **SAP** | Es Ey Pi | Şirketlerin tüm iş süreçlerini tek sistemden yönetir. | Kurumsal ERP yazılımı. Satış, finans, malzeme tedariği, depo yönetimi, üretim planlama ve insan kaynakları modülleriyle devasa işletmelerin verilerini birbirine entegre eden pazar lideri sistem. |
+| **ERP** | İ Ar Pi | Şirketin tüm iş süreçlerini tek bir çatı altında toplar. | Kurumsal Kaynak Planlaması (Enterprise Resource Planning). Şirketlerin fiziki, beşeri ve finansal kaynaklarını verimli kullanmak üzere tüm departmanları ortak bir veri tabanında birleştiren yönetim felsefesidir. |
+| **Power BI** | Pavir Bi Ay | Verileri grafiklere ve raporlara dönüştürür. | Microsoft İş Zekası (BI) aracı. Excel, SQL ve buluttaki karmaşık üretim ve finans verilerini alarak yöneticiler için interaktif görsel raporlar, KPI takipleri ve analiz panelleri oluşturur. |
+| **Lean** | Lin | İsrafı azaltarak işleri daha verimli hale getirmeyi amaçlar. | Yalın Üretim. Toyota üretim sistemine dayanan, süreçlerdeki israfları (Muda: Aşırı üretim, bekleme, taşıma, gereksiz işlem vb.) yok ederek kaliteyi, hızı ve müşteri değerini artırmayı amaçlayan felsefe. |
+| **Six Sigma** | Siks Sigma | Hataları azaltıp kaliteyi artırmak için kullanılan bir yöntemdir. | İstatistiksel kalite iyileştirme metodolojisi. Süreçlerdeki varyasyonu azaltarak milyonda en fazla 3.4 hata (DPMO) hedefleyen, DMAIC (Tanımla, Ölç, Analiz Et, İyileştir, Kontrol Et) çevrimini kullanan sistem. |
+
+### 🧪 Kimya ve Gıda
+
+| Standart / Sistem | Okunuşu | Görseldeki Tanımı | Detaylı İnceleme ve Mühendislikteki Rolü |
+| :--- | :--- | :--- | :--- |
+| **HACCP** | Hasıp | Gıdanın güvenli üretilmesini sağlayan sistem. | Tehlike Analizi ve Kritik Kontrol Noktaları. Hammaddeden tüketime kadar gıda güvenliğini tehdit eden biyolojik, kimyasal ve fiziksel risklerin belirlenmesi ve Kritik Kontrol Noktalarında önleyici tedbirlerle engellenmesi sistemidir. |
+| **GMP** | Ci Em Pi | İlaç ve gıda üretiminin kalite standartlarına uygun yapılmasını sağlar. | İyi Üretim Uygulamaları (Good Manufacturing Practices). İnsan sağlığını doğrudan etkileyen gıda, ilaç ve kozmetik üretim tesislerinin hijyen, tasarım, personel ve dokümantasyon standartlarını belirleyen asgari yasal kurallar. |
+| **ISO** | Ay So | Kalite yönetim sistemleri uluslararası standartlardır. | Uluslararası Standartlar Teşkilatı. Ürünlerin, hizmetlerin ve sistemlerin kalitesini, güvenliğini ve verimliliğini küresel düzeyde ortak kurallarla tescilleyen bağımsız kuruluştur. |
+| **ISO 22000** | Ay So Yirmi İki Bin | Gıda güvenliği yönetim sistemi standardı. | Çiftlikten sofraya tüm gıda zincirinde geçerli, HACCP ilkelerini de kapsayan, hijyen ve gıda güvenliği yönetimini sertifikalandıran küresel kalite standardıdır. |
+
+### 🌿 Çevre ve Diğer Alanlar
+
+| Standart / Süreç | Okunuşu | Görseldeki Tanımı | Detaylı İnceleme ve Mühendislikteki Rolü |
+| :--- | :--- | :--- | :--- |
+| **ISO 14001** | Ay So On Dört Bin Bir | Çevre yönetim sistemi standardı. | Kuruluşların çevresel etkilerini (atık yönetimi, karbon ayak izi, enerji tüketimi) sistematik bir yaklaşımla kontrol etmesini, azaltmasını ve yasal çevre mevzuatlarına uymasını sağlayan standarttır. |
+| **ÇED** | Çevresel Etki Değerlendirmesi | Projelerin çevreye etkisini analiz eden rapor sürecidir. | Fabrika, baraj, otoyol gibi yatırımların inşaat ve işletme aşamalarında çevreye vereceği zararlı etkilerin analiz edildiği, bu etkileri önlemek adına gerekli önlemlerin belirlendiği resmi yasal izin ve raporlama süreci. |
+
+---
+
 
 ## ⚙️ Mühendislik Branşları ve Araçları
 
