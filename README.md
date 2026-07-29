@@ -22,7 +22,8 @@ Bu depo, farklı mühendislik disiplinlerinde kullanılan temel yazılımlar, ma
 5. [Proje Klasör Yapısı](#-proje-klasör-yapısı)
 6. [Kurulum ve Çalıştırma](#-kurulum-ve-çalıştırma)
 7. [Katkıda Bulunma (Contributing)](#-katkıda-bulunma)
-8. [Lisans](#-lisans)
+8. [Mühendislik Alıntıları ve Kaynakça](#-mühendislik-alıntıları-ve-kaynakça)
+9. [Lisans](#-lisans)
 
 ---
 
@@ -125,6 +126,10 @@ Aşağıdaki tablolarda, görsel envanterimizde yer alan tüm dil, program ve ul
 ## ⚙️ Mühendislik Branşları ve Araçları
 
 ### 1. Yazılım ve Veri Analizi
+
+> 💬 *"First, solve the problem. Then, write the code."* — John Johnson  
+> 💬 *"Talk is cheap. Show me the code."* — Linus Torvalds
+
 *   **Betimsel İstatistik ve Lineer Regresyon:** Herhangi bir kütüphaneye bağımlı olmadan çalışan veri analiz aracı.
 *   **Birim Dönüştürücü:** Sıcaklık (C/F), Basınç (Bar/PSI/Pascal) ve Uzunluk (İnç/mm) arası dönüşümler.
 *   **Malzeme Veri Tabanı Yöneticisi:** SQLite tabanlı, mühendislik malzemelerinin mekanik ve fiziksel özelliklerini saklayan, sorgulayan ve yöneten veritabanı CRUD aracı.
@@ -132,28 +137,47 @@ Aşağıdaki tablolarda, görsel envanterimizde yer alan tüm dil, program ve ul
 *   *Dizin:* [software/](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/software/)
 
 ### 2. Elektrik-Elektronik ve Otomasyon
+
+> 💬 *"Automation is good, so long as you know exactly where to put the machine."* — Eliyahu M. Goldratt
+
 *   **PLC Register ve Modbus Simülatörü:** Coils, Discrete Inputs, Input Registers ve Holding Registers yapılarını simüle eden, motor hızı, sıcaklık ve termodinamik dengeleri çevrimsel (Scan Cycle) işleyen interaktif simülatör.
 *   **Kılavuzlar:** IEC 61131-3 PLC programlama dilleri, Structured Text (ST) örnekleri ve Modbus protokol detayları.
 *   *Dizin:* [automation-electronics/](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/automation-electronics/)
 
 ### 3. Makine ve İnşaat Mühendisliği
+
+> 💬 *"Scientists study the world as it is; engineers create the world that has never been."* — Theodore von Kármán  
+> 💬 *"Design is not just what it looks like and feels like. Design is how it works."* — Steve Jobs
+
 *   **CNC G-Kodu Jeneratörü:** Dikdörtgen ve daire profilleri için kesim parametrelerine (ilerleme hızı, spindle devri, takım çapı, emniyetli Z) göre CNC makineleri için G-Kodu üreten CAM aracı.
 *   **CPM Proje Planlayıcı:** Görevler, süreler ve bağımlılıkları analiz ederek Erken/Geç Başlangıç ve Bitiş zamanlarını hesaplayan, bollukları (slack) bulan ve Kritik Yol'u (Critical Path) çıkaran planlama motoru.
 *   **Kılavuzlar:** CAD/CAM dosya standartları (STEP, DXF, STL) ve Proje Yönetimi teorisi.
 *   *Dizin:* [mechanical-civil/](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/mechanical-civil/)
 
 ### 4. Endüstri Mühendisliği
+
+> 💬 *"Without data, you're just another person with an opinion."* — W. Edwards Deming  
+> 💬 *"If you can't describe what you are doing as a process, you don't know what you are doing."* — W. Edwards Deming
+
 *   **OEE Hesaplayıcı:** Kullanılabilirlik, Performans ve Kalite oranlarını hesaplayarak dünya standartlarında verimlilik analizi yapar.
 *   **Altı Sigma Analizi:** Hatalı ürün ve fırsat sayılarına göre DPMO ve 1.5 Sigma kaydırılmış Sigma Seviyesini hesaplayan istatistiksel kalite aracı.
 *   **Kılavuzlar:** Yalın Üretim prensipleri (5S, Kaizen, Kanban) ve Six Sigma kalitesi.
 *   *Dizin:* [industrial-engineering/](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/industrial-engineering/)
 
 ### 5. Kalite Yönetimi ve Gıda Güvenliği
+
+> 💬 *"Quality is not an act, it is a habit."* — Aristotle  
+> 💬 *"Do it right the first time."* — Philip Crosby
+
 *   **ISO Denetim Asistanı:** ISO 9001 ve ISO 22000 (HACCP) maddelerine göre iç denetim gerçekleştiren, minör/majör uygunsuzlukları ve denetçi bulgularını raporlayan, uyum yüzdesi çıkaran ve denetim raporunu metin olarak dışa aktaran asistan.
 *   **Kılavuzlar:** QMS, HACCP prensipleri ve GMP (İyi Üretim Uygulamaları).
 *   *Dizin:* [quality-standards/](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/quality-standards/)
 
 ### 6. Çevre ve Sürdürülebilirlik
+
+> 💬 *"We do not inherit the Earth from our ancestors; we borrow it from our children."* — Native American Proverb  
+> 💬 *"The greatest threat to our planet is the belief that someone else will save it."* — Robert Swan
+
 *   **Sera Gazı (GHG) Karbon Ayak İzi Hesaplayıcı:** Tesis veya projeler için Kapsam 1 (Doğal gaz, yakıt tüketimi), Kapsam 2 (Elektrik) ve Kapsam 3 (Uçuşlar, ulaşım) emisyonlarını hesaplayan ve emisyon dağılımına göre azaltım önerileri sunan ESG hesaplayıcı.
 *   **Kılavuzlar:** ISO 14001, ESG gereksinimleri ve sera gazı protokolü.
 *   *Dizin:* [environment/](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/environment/)
@@ -223,6 +247,43 @@ Geliştirmeye ve yeni mühendislik araçları eklemeye her zaman açığız! Kat
 3. Değişikliklerinizi yapın ve commit'leyin (`git commit -m 'Yeni araç eklendi: MATLAB Analiz Modülü'`).
 4. Dalınızı (branch) kendi deponuza itin (`git push origin feature/YeniArac`).
 5. Bir Çekme İsteği (Pull Request) oluşturun.
+
+---
+
+## 📚 Mühendislik Alıntıları ve Kaynakça
+
+### 💬 Alıntıların Mühendislik Analizi
+
+*   **John Johnson & Linus Torvalds (Yazılım):** Johnson'ın *"Önce problemi çöz, sonra kod yaz"* uyarısı, mühendislikte algoritma tasarımının kodlamadan önce gelmesi gerektiğini belirtir. Torvalds'ın *"Laf ucuzdur, bana kodu göster"* felsefesi ise teorik fikirlerin çalışan somut bir prototiple kanıtlanması gerekliliğine (Proof of Concept) vurgu yapar.
+*   **Eliyahu M. Goldratt (Otomasyon):** Kısıtlar Teorisi'nin (Theory of Constraints) kurucusu Goldratt, otomasyonun tek başına kurtarıcı olmadığını, eğer sistemdeki darboğaz (bottleneck) doğru yönetilmiyorsa otomasyonun sadece verimsizliği hızlandıracağını söyler.
+*   **Theodore von Kármán (Tasarım/Mekanik):** *"Bilim insanları olanı inceler, mühendisler ise daha önce hiç var olmamışı yaratır."* Bu söz, mühendisliğin özünde yatan yaratıcılık, tasarım ve sentez kabiliyetini tanımlar.
+*   **W. Edwards Deming (Kalite/Veri):** *"Veri olmadan sadece fikri olan başka bir insansınız."* Deming'in bu yaklaşımı, Altı Sigma ve istatistiksel kalite kontrolünün temelini oluşturur. Kararların hissiyatla değil, veri analiziyle alınması gerektiğini savunur.
+*   **Philip Crosby (Üretim):** *"İşi ilk seferinde doğru yapın."* Crosby'nin "Sıfır Hata" (Zero Defects) yaklaşımı, sonradan düzeltme maliyetinin, hatayı ilk başta önleme maliyetinden kat kat yüksek olduğunu vurgular.
+
+### 📖 Resmi Standartlar ve Akademik Referanslar
+
+Bu projedeki araçların ve rehberlerin oluşturulmasında aşağıdaki uluslararası standartlar ve dokümanlar referans alınmıştır:
+
+1.  **Python Standart Kütüphanesi:** Saf Python algoritmaları ve matematiksel işlemler için resmi dokümanlar.
+    *   [Python Documentation Portal](https://docs.python.org/3/)
+2.  **SQL ve SQLite İlişkisel Veritabanı:**
+    *   [SQLite SQL Syntax & Specification](https://www.sqlite.org/lang.html)
+3.  **Modbus Protokol Standartları:** `modbus_simulator.py` aracı için referans alınan protokol kılavuzu.
+    *   [Modbus Organization Specifications](https://modbus.org/specs.php)
+4.  **CNC ve G-Kodu Standartları:** CNC tornalama ve frezeleme yörüngeleri.
+    *   *NIST RS274NGC G-Code Standard (Version 3)*: [NIST Internal Report](https://www.nist.gov/)
+5.  **Kritik Yol Metodu (CPM) ve Proje Yönetimi:**
+    *   *PMBOK Guide (A Guide to the Project Management Body of Knowledge)*, Project Management Institute (PMI).
+6.  **OEE ve Yalın Altı Sigma Formülleri:**
+    *   Deming, W. E. (1986). *Out of the Crisis*. Massachusetts Institute of Technology.
+    *   Nakajima, S. (1988). *Introduction to TPM: Total Productive Maintenance*. Productivity Press.
+7.  **Sera Gazı Protokolü (GHG Protocol):** Karbon ayak izi emisyon faktörleri hesaplama metodolojisi.
+    *   [Greenhouse Gas Protocol Corporate Standard](https://ghgprotocol.org/)
+    *   *EPA Greenhouse Gas Emission Factors Hub*: [EPA.gov](https://www.epa.gov/climateleadership/center-corporate-climate-leadership)
+8.  **ISO Standartları Kaydı:**
+    *   *ISO 9001:2015 - Quality Management Systems*: [ISO Catalogue](https://www.iso.org/standard/62085.html)
+    *   *ISO 22000:2018 - Food Safety Management Systems*: [ISO Catalogue](https://www.iso.org/standard/65464.html)
+    *   *ISO 14001:2015 - Environmental Management Systems*: [ISO Catalogue](https://www.iso.org/standard/60857.html)
 
 ---
 
