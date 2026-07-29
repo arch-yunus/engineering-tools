@@ -1,5 +1,7 @@
 # 🛠️ Engineering Tools (Mühendislik Araçları ve Standartları)
 
+![Engineering Tools Banner](assets/banner.jpg)
+
 ![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Maintained: Yes](https://img.shields.io/badge/Maintained-Yes-green.svg)
 ![Contributions: Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)
