@@ -34,6 +34,21 @@ Bu ağda kritik yol **A -> B -> C -> E -> F** şeklindedir ve toplam süre **19 
 
 ---
 
+## Program Değerlendirme ve Gözden Geçirme Tekniği (PERT)
+
+Olasılıksal sürelerin kullanıldığı projelerde PERT yöntemi, her görev için üç farklı süre tahmini alır:
+1.  **İyimser Süre (Optimistic - o):** Her şeyin kusursuz gitmesi durumunda gereken süre.
+2.  **En Muhtemel Süre (Most Likely - m):** Normal koşullarda beklenen süre.
+3.  **Kötümser Süre (Pessimistic - p):** Aksiliklerin yaşanması durumunda gereken süre.
+
+Beklenen Süre ($t_e$) ve Varyans ($\sigma^2$) formülleri:
+$$t_e = \frac{o + 4m + p}{6}$$
+$$\sigma^2 = \left(\frac{p - o}{6}\right)^2$$
+
+Kritik yol üzerindeki görevlerin varyansları toplanarak projenin standart sapması ($\sqrt{\sum \sigma^2_{kritik}}$) hesaplanır ve projenin belirli bir sürede bitme olasılıkları istatistiksel (z-tablosu) olarak öngörülebilir.
+
+---
+
 ## Klasördeki Araç
 
-*   **[cpm_calculator.py](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/mechanical-civil/project-management/cpm_calculator.py):** Kullanıcının tanımladığı veya hazır yüklü şablondaki aktiviteleri alan, İleri Geçiş (Forward Pass) ve Geri Geçiş (Backward Pass) hesaplamalarıyla erken/geç başlangıç sürelerini, bollukları (slack) ve projenin kritik yolunu bulan gelişmiş bir proje planlama aracıdır.
+*   **[cpm_calculator.py](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/mechanical-civil/project-management/cpm_calculator.py):** İster tekil sabit sürelerle (CPM) ister olasılıksal üçlü süre tahminleriyle (PERT) çalışabilen; erken/geç süreleri, bollukları, kritik yolu bulurken aynı zamanda kritik yol varyansını, standart sapmasını ve belirli güven aralıklarında projenin teslim olasılıklarını hesaplayan gelişmiş bir proje planlama aracıdır.

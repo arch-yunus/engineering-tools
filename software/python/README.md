@@ -55,6 +55,14 @@ plt.show()
 
 ---
 
+## Polinom Eğri Uydurma (Polynomial Curve Fitting)
+
+Deney verileri her zaman doğrusal bir hat izlemez. İkinci derece parabolik davranışlar sergileyen sistemlerde (örneğin aerodinamik sürtünme kuvveti $F_d = \frac{1}{2}\rho C_d A v^2$ veya gerilme-gerinim eğrisindeki plastik deformasyon bölgesi) **İkinci Derece Polinom Regresyonu** ($y = ax^2 + bx + c$) kullanılır.
+
+Bu araç, matris hesaplamalarını saf Python determinant yöntemi (Cramer Kuralı) ile gerçekleştirerek ek kütüphaneler olmadan da hassas eğri uydurma işlemlerini çözer.
+
+---
+
 ## Klasördeki Araç
 
-*   **[data_analyzer.py](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/software/python/data_analyzer.py):** Herhangi bir ek kütüphane gerektirmeksizin (saf Python ile) çalışan betimsel istatistik, lineer regresyon ($y = mx + c$) ve mühendislik birimleri dönüştürücüsüdür.
+*   **[data_analyzer.py](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/software/python/data_analyzer.py):** Herhangi bir ek kütüphane gerektirmeksizin (saf Python ile) çalışan betimsel istatistik, doğrusal ve ikinci derece **polinom regresyon analizleri** ($y = ax^2 + bx + c$), hız ve sıcaklık/basınç birimleri dönüştürücüsüdür.

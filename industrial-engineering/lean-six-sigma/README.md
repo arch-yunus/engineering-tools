@@ -37,6 +37,16 @@ Altı Sigma, hata oranlarını azaltarak kaliteyi mükemmelleştirmeyi amaçlaya
 
 ---
 
+## Takt Süresi ve Hat Dengeleme (Line Balancing)
+
+*   **Takt Süresi (Takt Time):** Müşteri talebini karşılamak için montaj hattında bir ürünün en fazla ne kadar sürede çıkması gerektiğini gösteren ritim süresidir.
+    $$\text{Takt Süresi} = \frac{\text{Net Çalışma Süresi (Saniye)}}{\text{Müşteri Talebi (Adet)}}$$
+*   **Hat Dengeleme (Line Balancing):** Montaj hattındaki iş istasyonlarının çevrim sürelerini birbirine yakınlaştırarak darboğazları engelleme ve verimliliği artırma sürecidir.
+*   **Hat Dengeleme Verimliliği (Line Balance Efficiency - LBE):**
+    $$\text{LBE } \% = \frac{\sum \text{İstasyon Süreleri}}{\text{İstasyon Sayısı} \times \text{En Yüksek İstasyon Süresi}} \times 100$$
+
+---
+
 ## Klasördeki Araç
 
-*   **[oee_sigma_calculator.py](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/industrial-engineering/lean-six-sigma/oee_sigma_calculator.py):** Üretim verilerine göre Kullanılabilirlik, Performans, Kalite ve nihai OEE değerini çıkaran; aynı zamanda hatalar, ürün adedi ve fırsat sayılarına göre DPMO ve 1.5 Sigma kayması uygulayarak net Sigma Kalite Derecesini bulan etkileşimli bir CLI hesaplama aracıdır.
+*   **[oee_sigma_calculator.py](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/industrial-engineering/lean-six-sigma/oee_sigma_calculator.py):** Üretim verilerine göre OEE, DPMO ve 1.5 Sigma kaydırılmış Sigma Seviyesini hesaplamanın yanı sıra, müşteri talebine göre **Takt Süresi** ve istasyon sürelerine göre **Montaj Hattı Dengeleme Verimliliği** analizi yapabilen etkileşimli bir CLI hesaplama aracıdır.

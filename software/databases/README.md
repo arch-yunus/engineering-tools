@@ -53,6 +53,17 @@ INNER JOIN tension_tests t ON m.id = t.material_id;
 
 ---
 
+## Ashby Malzeme Seçim İndeksleri
+
+Makine ve yapı tasarımında, minimum ağırlıkla maksimum mukavemet veya sertlik sağlamak için **Ashby Malzeme Seçim İndeksleri** kullanılır.
+
+*   **Özgül Mukavemet (Specific Strength - $M_1$):** Malzemenin akma mukavemetinin yoğunluğuna oranıdır. Hafif ve yüksek mukavemet gerektiren uçak, uzay araçları gibi tasarımlarda yüksek olması istenir.
+    $$M_1 = \frac{\sigma_y}{\rho}$$
+*   **Özgül Sertlik (Specific Stiffness - $M_2$):** Malzemenin elastisite modülünün yoğunluğuna oranıdır. Eğilmeye karşı direnç ve hafiflik istenen şasiler, köprü kirişlerinde kritik seçim indeksidir.
+    $$M_2 = \frac{E}{\rho}$$
+
+---
+
 ## Klasördeki Araç
 
-*   **[db_manager.py](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/software/databases/db_manager.py):** Yerel bir SQLite veritabanı dosyası (`materials.db`) oluşturan, malzeme mekanik ve fiziksel özelliklerini (Akma Mukavemeti, Elastisite Modülü, Yoğunluk vb.) kaydeden, arayan ve yöneten etkileşimli bir CLI aracıdır.
+*   **[db_manager.py](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/software/databases/db_manager.py):** Yerel bir SQLite veritabanı dosyası (`materials.db`) oluşturan; malzeme kategorilerini, yoğunluğunu, akma sınırını ve elastisite değerlerini yönetirken aynı zamanda mekanik hafiflik kararları için **Ashby Özgül Mukavemet ve Özgül Sertlik indekslerini** dinamik hesaplayan bir veri tabanı yönetim aracıdır.

@@ -20,6 +20,14 @@ ISO_22000_HACCP_QUESTIONS = [
     ("Madde 8.4 - İzlenebilirlik", "Hammaddeden son ürüne kadar tüm ürünlerin geriye dönük izlenebilirliği (parti/lot takibi) doğrulanabiliyor mu?")
 ]
 
+ISO_14001_QUESTIONS = [
+    ("Madde 5.2 - Çevre Politikası", "Üst yönetim, çevre koruma ve kirliliği önleme taahhütlerini içeren bir çevre politikası oluşturmuş mu?"),
+    ("Madde 6.1.2 - Çevresel Boyutlar", "Kuruluş, kontrol edebildiği çevre boyutlarını (atıklar, emisyonlar vb.) ve önemli çevresel etkileri belirlemiş mi?"),
+    ("Madde 6.1.3 - Uygunluk Yükümlülükleri", "Çevre boyutlarıyla ilgili yürürlükteki yasal mevzuat gereklilikleri belirlenmiş ve bunlara uyum izleniyor mu?"),
+    ("Madde 8.1 - Operasyonel Kontrol", "Önemli çevresel etkileri kontrol etmek ve atık yönetimini optimize etmek için prosedürler tanımlanmış mı?"),
+    ("Madde 8.2 - Acil Durumlara Hazırlık", "Çevresel acil durumlar (kimyasal dökülme, sızıntı, yangın vb.) için eylem planı oluşturulmuş ve tatbikatlar yapılmış mı?")
+]
+
 def run_audit(standard_name, questions):
     print(f"\n==================================================")
     print(f"      {standard_name} DENETİM SÜRECİ BAŞLADI")
@@ -99,6 +107,7 @@ def main():
         print("\nStandart Seçimi:")
         print("1. ISO 9001:2015 Kalite Yönetim Sistemi Denetimi")
         print("2. ISO 22000 & HACCP Gıda Güvenliği Denetimi")
+        print("3. ISO 14001:2015 Çevre Yönetim Sistemi Denetimi")
         print("0. Geri Dön")
         print("==============================================")
         secim = input("Seçiminiz: ").strip()
@@ -107,6 +116,8 @@ def main():
             run_audit("ISO 9001-2015 QMS", ISO_9001_QUESTIONS)
         elif secim == '2':
             run_audit("ISO 22000-HACCP FSMS", ISO_22000_HACCP_QUESTIONS)
+        elif secim == '3':
+            run_audit("ISO 14001-2015 EMS", ISO_14001_QUESTIONS)
         elif secim == '0':
             break
         else:

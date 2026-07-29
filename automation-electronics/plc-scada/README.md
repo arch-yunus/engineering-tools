@@ -51,6 +51,16 @@ Modbus, endüstriyel cihazlar arasındaki iletişim için kullanılan en eski ve
 
 ---
 
+## PID Kontrol Döngüsü ve Sıcaklık Regülasyonu
+
+Proses endüstrisinde analog büyüklükleri (sıcaklık, akış, basınç, seviye) kararlı tutmak için **PID (Proportional-Integral-Derivative)** kontrol döngüleri kullanılır.
+
+*   **Proportional (Oransal - Kp):** Anlık hatayla orantılı tepki verir. Hatayı hızlı azaltır ancak kalıcı sapma (offset) bırakabilir.
+*   **Integral (İntegral - Ki):** Geçmiş hataları toplayarak kalıcı sapmayı yok eder. Aşırı birikmesi "windup" problemine yol açar (anti-windup koruması gerektirir).
+*   **Derivative (Türevsel - Kd):** Hatanın değişim hızına bakarak gelecekteki salınımı sönümler.
+
+---
+
 ## Klasördeki Araç
 
-*   **[modbus_simulator.py](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/automation-electronics/plc-scada/modbus_simulator.py):** Belirtilen tüm Modbus register tiplerini (Coil, Discrete Input, Input Register, Holding Register) simüle eden ve termodinamik/güvenlik senaryolarıyla (Acil Stop, limit kontrolü vb.) entegre çalışan interaktif bir PLC CPU simülasyon aracıdır.
+*   **[modbus_simulator.py](file:///g:/Diğer bilgisayarlar/Dizüstü Bilgisayarım/github repolarım/engineering-tools/automation-electronics/plc-scada/modbus_simulator.py):** Belirtilen tüm Modbus register tiplerini (Coil, Discrete Input, Input Register, Holding Register) simüle eden; motor ısınmasını kontrol altında tutmak için gerçekçi bir **PID kapalı çevrim sıcaklık regülasyonu** simülasyonu sunan ve limit güvenlik önlemlerini (E-stop trip vb.) içeren interaktif bir PLC CPU simülatörüdür.

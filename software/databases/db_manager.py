@@ -49,11 +49,16 @@ def list_materials():
     conn.close()
     
     print("\n--- Malzeme Veri Tabanı Kayıtları ---")
-    print(f"{'ID':<4} | {'Malzeme Adı':<25} | {'Kategori':<15} | {'Yoğunluk':<8} | {'Akma Muk.':<10} | {'Elast. Mod.':<11} | {'Isıl İlet.'}")
-    print("-" * 95)
+    print(f"{'ID':<4} | {'Malzeme Adı':<25} | {'Kategori':<15} | {'Yoğunluk':<8} | {'Akma Muk.':<10} | {'Elast. Mod.':<11} | {'Özgül Muk.(σy/ρ)':<16} | {'Özgül Sert.(E/ρ)'}")
+    print("-" * 125)
     for r in rows:
-        print(f"{r[0]:<4} | {r[1]:<25} | {r[2]:<15} | {r[3]:8.2f} | {r[4]:10.1f} | {r[5]:11.1f} | {r[6]:.1f}")
-    print("-" * 95)
+        density = r[3]
+        yield_strength = r[4]
+        elastic_modulus = r[5]
+        m1 = yield_strength / density if density > 0 else 0
+        m2 = elastic_modulus / density if density > 0 else 0
+        print(f"{r[0]:<4} | {r[1]:<25} | {r[2]:<15} | {r[3]:8.2f} | {r[4]:10.1f} | {r[5]:11.1f} | {m1:16.2f} | {m2:.2f}")
+    print("-" * 125)
 
 def search_materials():
     print("\n--- Malzeme Arama ---")
@@ -85,11 +90,16 @@ def search_materials():
         return
         
     print("\n--- Arama Sonuçları ---")
-    print(f"{'ID':<4} | {'Malzeme Adı':<25} | {'Kategori':<15} | {'Yoğunluk':<8} | {'Akma Muk.':<10} | {'Elast. Mod.':<11} | {'Isıl İlet.'}")
-    print("-" * 95)
+    print(f"{'ID':<4} | {'Malzeme Adı':<25} | {'Kategori':<15} | {'Yoğunluk':<8} | {'Akma Muk.':<10} | {'Elast. Mod.':<11} | {'Özgül Muk.(σy/ρ)':<16} | {'Özgül Sert.(E/ρ)'}")
+    print("-" * 125)
     for r in rows:
-        print(f"{r[0]:<4} | {r[1]:<25} | {r[2]:<15} | {r[3]:8.2f} | {r[4]:10.1f} | {r[5]:11.1f} | {r[6]:.1f}")
-    print("-" * 95)
+        density = r[3]
+        yield_strength = r[4]
+        elastic_modulus = r[5]
+        m1 = yield_strength / density if density > 0 else 0
+        m2 = elastic_modulus / density if density > 0 else 0
+        print(f"{r[0]:<4} | {r[1]:<25} | {r[2]:<15} | {r[3]:8.2f} | {r[4]:10.1f} | {r[5]:11.1f} | {m1:16.2f} | {m2:.2f}")
+    print("-" * 125)
 
 def add_material():
     print("\n--- Yeni Malzeme Ekleme ---")

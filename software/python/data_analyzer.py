@@ -44,7 +44,6 @@ def linear_regression(x, y):
     y_mean = sum_y / n
     ss_tot = sum((val_y - y_mean) ** 2 for val_y in y)
     ss_res = sum((val_y - (m * val_x + c)) ** 2 for val_x, val_y in zip(x, y))
-    
     r_sq = 1 - (ss_res / ss_tot) if ss_tot != 0 else 1.0
     
     return {
@@ -54,12 +53,79 @@ def linear_regression(x, y):
         "denklem": f"y = {m:.4f}x + {c:.4f}"
     }
 
+def det3x3(m):
+    return (m[0][0]*(m[1][1]*m[2][2] - m[1][2]*m[2][1]) -
+            m[0][1]*(m[1][0]*m[2][2] - m[1][2]*m[2][0]) +
+            m[0][2]*(m[1][0]*m[2][1] - m[1][1]*m[2][0]))
+
+def quadratic_regression(x, y):
+    n = len(x)
+    if n != len(y) or n < 3:
+        return None
+        
+    sum_x = sum(x)
+    sum_x2 = sum(val**2 for val in x)
+    sum_x3 = sum(val**3 for val in x)
+    sum_x4 = sum(val**4 for val in x)
+    sum_y = sum(y)
+    sum_xy = sum(val_x * val_y for val_x, val_y in zip(x, y))
+    sum_x2y = sum((val_x**2) * val_y for val_x, val_y in zip(x, y))
+    
+    # Normal Equations matrix
+    A = [
+        [sum_x4, sum_x3, sum_x2],
+        [sum_x3, sum_x2, sum_x],
+        [sum_x2, sum_x, n]
+    ]
+    
+    detA = det3x3(A)
+    if abs(detA) < 1e-9:
+        return None
+        
+    # Replace columns with B vector
+    B = [sum_x2y, sum_xy, sum_y]
+    
+    A1 = [
+        [B[0], sum_x3, sum_x2],
+        [B[1], sum_x2, sum_x],
+        [B[2], sum_x, n]
+    ]
+    A2 = [
+        [sum_x4, B[0], sum_x2],
+        [sum_x3, B[1], sum_x],
+        [sum_x2, B[2], n]
+    ]
+    A3 = [
+        [sum_x4, sum_x3, B[0]],
+        [sum_x3, sum_x2, B[1]],
+        [sum_x2, sum_x, B[2]]
+    ]
+    
+    a = det3x3(A1) / detA
+    b = det3x3(A2) / detA
+    c = det3x3(A3) / detA
+    
+    # Calculate R-squared
+    y_mean = sum_y / n
+    ss_tot = sum((val_y - y_mean) ** 2 for val_y in y)
+    ss_res = sum((val_y - (a * val_x**2 + b * val_x + c)) ** 2 for val_x, val_y in zip(x, y))
+    r_sq = 1 - (ss_res / ss_tot) if ss_tot != 0 else 1.0
+    
+    return {
+        "a (x^2)": a,
+        "b (x)": b,
+        "c (sabit)": c,
+        "R_kare (R2)": r_sq,
+        "denklem": f"y = {a:.4f}x^2 + {b:.4f}x + {c:.4f}"
+    }
+
 def unit_converter():
     while True:
         print("\n--- Birim Dönüştürücü ---")
         print("1. Sıcaklık (Celsius <=> Fahrenheit)")
         print("2. Basınç (Bar <=> PSI <=> Pascal)")
         print("3. Uzunluk (İnç <=> Milimetre)")
+        print("4. Hız (m/s <=> km/h <=> mph)")
         print("0. Geri Dön")
         secim = input("Seçiminiz: ").strip()
         
@@ -75,6 +141,9 @@ def unit_converter():
             val = float(input("Değeri girin: "))
             print(f"{val} inç = {val * 25.4:.2f} mm")
             print(f"{val} mm = {val / 25.4:.4f} inç")
+        elif secim == '4':
+            val = float(input("Değeri girin (m/s): "))
+            print(f"{val} m/s = {val * 3.6:.2f} km/h = {val * 2.23694:.2f} mph")
         elif secim == '0':
             break
         else:
@@ -83,7 +152,7 @@ def unit_converter():
 
 def data_analysis_flow():
     print("\n--- İstatistik ve Regresyon Analizi ---")
-    print("Analiz edilecek sayısal değerleri aralarında boşluk bırakarak girin (Örn: 10 12.5 15 18 20.3):")
+    print("Analiz edilecek sayısal değerleri aralarında boşluk bırakarak girin (Örn: 1 2 3 4 5):")
     try:
         x_input = input("X Değerleri: ").strip()
         x_data = [float(x) for x in x_input.split()]
@@ -102,16 +171,29 @@ def data_analysis_flow():
             if len(y_data) != len(x_data):
                 print("[HATA] X ve Y veri boyutları eşleşmiyor.")
                 return
-            reg = linear_regression(x_data, y_data)
-            if reg:
-                print("\n--- Lineer Regresyon Analizi (y = mx + c) ---")
-                for k, v in reg.items():
-                    if isinstance(v, float):
-                        print(f"{k:15}: {v:.6f}")
-                    else:
-                        print(f"{k:15}: {v}")
-            else:
-                print("[HATA] Regresyon hesaplanamadı (yetersiz veri veya x değerleri sabit).")
+                
+            print("\nRegresyon Modeli Seçin:")
+            print("1. Doğrusal Regresyon (y = mx + c)")
+            print("2. İkinci Derece Polinom Regresyonu (y = ax^2 + bx + c)")
+            reg_choice = input("Seçiminiz: ").strip()
+            
+            if reg_choice == '1':
+                reg = linear_regression(x_data, y_data)
+                if reg:
+                    print("\n--- Lineer Regresyon Analizi ---")
+                    for k, v in reg.items():
+                        print(f"{k:15}: {v:.6f}" if isinstance(v, float) else f"{k:15}: {v}")
+                else:
+                    print("[HATA] Regresyon hesaplanamadı.")
+            elif reg_choice == '2':
+                reg = quadratic_regression(x_data, y_data)
+                if reg:
+                    print("\n--- Polinom Regresyon Analizi ---")
+                    for k, v in reg.items():
+                        print(f"{k:15}: {v:.6f}" if isinstance(v, float) else f"{k:15}: {v}")
+                else:
+                    print("[HATA] Polinom regresyon hesaplanamadı (yetersiz veri veya tekil matris).")
+                    
     except ValueError:
         print("[HATA] Lütfen geçerli sayısal değerler girin.")
     input("\nDevam etmek için Enter'a basın...")
