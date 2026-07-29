@@ -1,0 +1,19 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Databases
+*.db
+*.sqlite3
+
+# Local report exports & G-code output
+*report.txt
+*_report.txt
+*.nc
+*.gcode
+
+# OS generated files
+.DS_Store
+Thumbs.db
